@@ -26,6 +26,8 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY . ./
+RUN npm run webpack && \
+    npm run gulp
 
 ARG GIT_CURRENT_COMMIT="<unknown>"
 ENV GIT_CURRENT_COMMIT=${GIT_CURRENT_COMMIT}

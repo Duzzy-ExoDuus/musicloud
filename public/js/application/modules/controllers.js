@@ -198,7 +198,7 @@ MusicLoud.controller("AlbumViewController", [
                 album_artist:   $scope.tracks.map(field("album_artist")).reduce(or, ""),
                 cover_id:       $scope.tracks.map(field("middle_cover_id")).reduce(or, null),
                 artist_url:     $scope.tracks.map(field("artist_url")).reduce(or),
-                album_year:     groupYears($scope.tracks),
+                album_year:     aggregateYears($scope.tracks),
                 album_genre:    groupGenres($scope.tracks),
                 length:         aggregateDuration($scope.tracks),
                 discs_count:    $scope.tracks.map(field("disk_number")).distinct().length,
